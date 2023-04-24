@@ -236,7 +236,11 @@ const Footer = () => {
 						<PhoneOutlined className='rotate-[135deg]' /> + 375 17  323-15-30
 					</p>
 					<div className='flex items-center mt-4'>
-						<Image src='mail.svg' width={25} height={25} />
+						<Image
+							src='mail.svg'
+							width={25} height={25}
+							alt='иконка почты'
+						/>
 						<span className='ml-2 text-sm'>
 							serviceprintfoto@gmail.com
 						</span>
@@ -245,13 +249,21 @@ const Footer = () => {
 						<a href='https://www.instagram.com/copyprint.podarki/'
 							target='_blank'
 						>
-							<Image src='instagram.svg' width={30} height={30} />
+							<Image
+								src='instagram.svg'
+								width={30} height={30}
+								alt='иконка instagram'
+							/>
 						</a>
 						<a href='https://vk.com/print1234'
 							target='_blank'
 							className='ml-4'
 						>
-							<Image src='vk.svg' width={24} height={24} />
+							<Image
+								src='vk.svg'
+								width={24} height={24}
+								alt='иконка vk'
+							/>
 						</a>
 					</div>
 				</div>
