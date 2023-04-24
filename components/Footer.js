@@ -5,7 +5,7 @@ import {
 } from '@ant-design/icons'
 import { useScreens } from '@component/Constants/constants'
 import Image from 'next/image'
-import Map from '@component/components/Map'
+// import Map from '@component/components/Map'
 
 const Footer = () => {
 	const screens = useScreens()
@@ -24,9 +24,9 @@ const Footer = () => {
 					</p>
 
 
-					{/* <Image src='/2.webp' width={1960} height={742} className='rounded-md' /> */}
+					<Image src='/2.webp' width={1960} height={742} className='rounded-md' />
 
-					<Map address={1} />
+					{/* <Map address={1} /> */}
 
 					<p className='text-sm mt-3'>
 						<span className='flex items-center mb-1'>

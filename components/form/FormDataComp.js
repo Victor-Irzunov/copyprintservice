@@ -135,7 +135,7 @@ export const FormDataComp = ({ handleCancel, title, }) => {
 
 
 	return (
-		<>
+		<div className='overflow-hidden	overflow-x-hidden'>
 			<Form
 				name="basic"
 				labelCol={{
@@ -400,6 +400,6 @@ export const FormDataComp = ({ handleCancel, title, }) => {
 				</Form.Item>
 			</Form >
 
-		</>
+		</div>
 	)
 }

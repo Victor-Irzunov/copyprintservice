@@ -32,7 +32,7 @@ export const dataMainService = [
 			{
 				id: 2,
 				title: `Печать и ксерокопия цветная`,
-				img_price: '/digitalcolor.webp',
+				img_price: '/digitalcolor2.webp',
 				alt_price: 'Цены на черно-белую ксерокопию и печать',
 				err: (
 					<div className="">
