@@ -217,10 +217,10 @@ export const HeaderInfo = ({ setIsVisible }) => {
 									<a href={`${screens.md ? 'https://t.me/' : 'https://t.me/@'}`}>
 										<Image src='/telegram.svg' width={30} height={30} className='mr-3' />
 									</a>
-									<a href='https://wa.me/37529?text=нуж....%....%20'
+									{/* <a href='https://wa.me/37529?text=нуж....%....%20'
 									>
 										<Image src='/whatsapp.svg' width={30} height={30} className='mr-3' />
-									</a>
+									</a> */}
 									<a href='viber://chat?number=%2B37533'>
 										<Image src='viber.svg' width={30} height={30} className='mr-3' />
 									</a>
