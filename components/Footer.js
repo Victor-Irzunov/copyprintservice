@@ -1,17 +1,59 @@
 import {
-	EnvironmentOutlined, IssuesCloseOutlined,
+	EnvironmentOutlined,
 	ClockCircleOutlined, FieldTimeOutlined,
-	PhoneOutlined, MailOutlined,
+	PhoneOutlined,
 } from '@ant-design/icons'
 import { useScreens } from '@component/Constants/constants'
 import Image from 'next/image'
-// import Map from '@component/components/Map'
+import MapComp from '@component/components/MapComp'
+import { useState, useRef, useEffect } from "react";
 
 const Footer = () => {
 	const screens = useScreens()
+
+	const iframeRef = useRef(null)
+	const iframeRef2 = useRef(null)
+	const [inView, setInView] = useState(false)
+	const [inView2, setInView2] = useState(false)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setInView(true);
+				}
+			},
+			{ threshold: 0.5 } // задает порог видимости в 50%
+		)
+		if (iframeRef.current) {
+			observer.observe(iframeRef.current);
+		}
+		// Очистка наблюдателя при размонтировании
+		return () => {
+			observer.disconnect();
+		}
+	}, [])
+	useEffect(() => {
+		const observer2 = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setInView2(true);
+				}
+			},
+			{ threshold: 0.5 }
+		)
+		if (iframeRef2.current) {
+			observer2.observe(iframeRef2.current);
+		}
+		// Очистка наблюдателя при размонтировании
+		return () => {
+			observer2.disconnect()
+		}
+	}, [])
+
 	return (
-		<footer className="mt-auto z-10 relative bg-white" id="contact">
-			<div className="container mx-auto py-5">
+		<footer className="mt-auto z-10 relative bg-white" id="contact" ref={iframeRef2}>
+			<div className="container mx-auto py-5" >
 				<h4 className="text-center text-xl uppercase">Наши контакты</h4>
 
 				<div className="bg-slate-200 rounded-lg px-3 py-4 mt-5">
@@ -24,9 +66,9 @@ const Footer = () => {
 					</p>
 
 
-					<Image src='/2.webp' width={1960} height={742} className='rounded-md' />
+					{/* <Image src='/2.webp' width={1960} height={742} className='rounded-md' /> */}
 
-					{/* <Map address={1} /> */}
+					{inView2 && <MapComp address={1} />}
 
 					<p className='text-sm mt-3'>
 						<span className='flex items-center mb-1'>
@@ -90,7 +132,9 @@ const Footer = () => {
 					<p className='text-xs pl-2 mb-2'>
 						(ст.м."Петровщина", ТРЦ "Титан", Первая башня от метро, холл, пом. 3Н)
 					</p>
-					<Image src='/3.webp' width={1960} height={742} className='rounded-md' />
+					{/* <Image src='/3.webp' width={1960} height={742} className='rounded-md' /> */}
+					{inView2 && <MapComp address={2} />}
+
 					<p className='text-sm mt-3'>
 						<span className='flex items-center mb-1'>
 							<ClockCircleOutlined className='mr-2' /> Время работы:
@@ -154,7 +198,10 @@ const Footer = () => {
 					<p className='text-xs pl-2 mb-2'>
 						(вход расположен в центре здания со стороны фасада)
 					</p>
-					<Image src='/4.webp' width={1960} height={742} className='rounded-md' />
+					{/* <Image src='/4.webp' width={1960} height={742} className='rounded-md' /> */}
+
+					{inView2 && <MapComp address={3} />}
+
 					<p className='text-sm mt-3'>
 						<span className='flex items-center mb-1'>
 							<ClockCircleOutlined className='mr-2' /> Время работы:
@@ -209,7 +256,14 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8f6de9222c687744378d4117baddd54b913f2bb015c7e5b269d8c659377f12f2&amp;source=constructor" width="100%" height="400" frameBorder="0"></iframe>
+
+
+			<div ref={iframeRef}>
+				{
+					inView && <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8f6de9222c687744378d4117baddd54b913f2bb015c7e5b269d8c659377f12f2&amp;source=constructor" width="100%" height="400" frameBorder="0"></iframe>
+				}
+			</div>
+
 
 			<div className='flex items-center container mx-auto mt-3'>
 				<p className="

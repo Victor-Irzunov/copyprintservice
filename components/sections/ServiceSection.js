@@ -46,18 +46,30 @@ const ServiceSection = () => {
 				{
 					dataMainService.map(el => {
 						return (
-							<motion.div
-								initial="hidden"
-								whileInView="visible"
-								key={el.id}
-								id={el.id}
-								variants={!scrollDirection ? yAnimation : yAnimation3}
-								animate={animation}
-							>
+							// <motion.div
+							// 	initial="hidden"
+							// 	whileInView="visible"
+							// 	key={el.id}
+							// 	id={el.id}
+							// 	variants={!scrollDirection ? yAnimation : yAnimation3}
+							// 	animate={animation}
+							// >
 								<div
 									className="bg-white mb-16 pb-8 rounded-md"
 								>
-									<Image src={el.img} alt={el.alt} width={1280} height={900} className="rounded-t-md" />
+
+
+									<Image
+										src={el.img}
+										alt={el.alt}
+										width={1280}
+										height={900}
+										className="rounded-t-md"
+										placeholder="blur"
+										blurDataURL="/logo.webp"
+									/>
+
+
 									<div className="px-1 text-center">
 										<h3 className="uppercase mt-3 mb-2 text-[#C2398E] text-xl font-semibold">
 											{el.h3}
@@ -117,7 +129,7 @@ const ServiceSection = () => {
 										</div>
 									</div>
 								</div>
-							</motion.div>
+							// </motion.div>
 						)
 					})
 				}

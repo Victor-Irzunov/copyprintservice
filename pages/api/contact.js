@@ -1,11 +1,10 @@
 import multer from 'multer';
-// import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
 const upload = multer({ dest: 'uploads/' });
 export const config = {
   api: {
-    bodyParser: false // Don't parse data with Next.js' built-in body parser
+    bodyParser: false
   }
 }
 export default async function handler(req, res) {
@@ -54,7 +53,6 @@ export default async function handler(req, res) {
         Почта: ${email}
         Телефон: ${tel}
         Комментарий: ${message}
-
         Формат бумаги: ${format}
         Цвет печати: ${color}
         Плотность бумаги:${density}
