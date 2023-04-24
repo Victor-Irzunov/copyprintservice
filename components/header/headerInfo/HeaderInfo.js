@@ -1,8 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Collapse } from 'antd'
-// import telegram from '../../../public/telegram.svg'
-// import viber from '../../../public/viber.svg'
-import whatsapp from '../../../public/WhatsApp.svg'
 import { ClockCircleOutlined, PhoneOutlined, ShakeOutlined } from '@ant-design/icons'
 import { useScreens } from '../../../Constants/constants'
 import Image from 'next/image'
@@ -218,11 +215,11 @@ export const HeaderInfo = ({ setIsVisible }) => {
 
 								<div className='z-20 flex items-center'>
 									<a href={`${screens.md ? 'https://t.me/' : 'https://t.me/@'}`}>
-										<Image src='telegram.svg' width={30} height={30} className='mr-3' />
+										<Image src='/telegram.svg' width={30} height={30} className='mr-3' />
 									</a>
 									<a href='https://wa.me/37529?text=нуж....%....%20'
 									>
-										<Image src='whatsapp.svg' width={30} height={30} className='mr-3' />
+										<Image src='/whatsapp.svg' width={30} height={30} className='mr-3' />
 									</a>
 									<a href='viber://chat?number=%2B37533'>
 										<Image src='viber.svg' width={30} height={30} className='mr-3' />
@@ -230,13 +227,13 @@ export const HeaderInfo = ({ setIsVisible }) => {
 									<a href='https://www.instagram.com/copyprint.podarki/'
 										target='_blank'
 									>
-										<Image src='instagram.svg' width={30} height={30} className='mr-3' />
+										<Image src='/instagram.svg' width={30} height={30} className='mr-3' />
 									</a>
 									<a href='https://vk.com/print1234'
 										target='_blank'
 										className=''
 									>
-										<Image src='vk.svg' width={24} height={24} />
+										<Image src='/vk.svg' width={24} height={24} />
 									</a>
 								</div>
 							</div>
